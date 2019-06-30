@@ -1,0 +1,22 @@
+pipeline {
+	agent any
+	stages {
+		stage('build'){
+			steps {
+				echo "step1 complete!"
+				}
+			}
+		stage('deploy') {
+			steps {
+				echo "step 2 complete"
+				ls -l /tmp
+				}
+			}
+		stage('test') {
+			steps {
+				echo "step 3 complete"
+				sh /usr/bin/whoami
+				}
+				}
+		}
+}
